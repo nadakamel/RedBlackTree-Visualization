@@ -14,7 +14,7 @@ https://nodejs.org/en/download/
 4) Run the project on Terminal using the below command line.
 `npm start`
 
-## About Red-Black Tree
+## About Red-Black Trees
 
 A **red–black tree** is a kind of self-balancing binary search 
 tree in computer science. Each node of the binary tree has 
