@@ -56,34 +56,6 @@ of the tree, this theoretical upper bound on the height
 allows red–black trees to be efficient in the worst case, 
 unlike ordinary binary search trees.
 
-## Balancing during insertion
-
-### If uncle is RED
-![Red Black Tree Balancing](https://www.geeksforgeeks.org/wp-content/uploads/redBlackCase2.png)
-
-### If uncle is BLACK
-
-- Left Left Case (`p` is left child of `g` and `x` is left child of `p`)
-- Left Right Case (`p` is left child of `g` and `x` is right child of `p`)
-- Right Right Case (`p` is right child of `g` and `x` is right child of `p`)
-- Right Left Case (`p` is right child of `g` and `x` is left child of `p`)
-
-#### Left Left Case (See g, p and x)
-
-![Red Black Tree Balancing](https://www.geeksforgeeks.org/wp-content/uploads/redBlackCase3a1.png)
-
-#### Left Right Case (See g, p and x)
-
-![Red Black Tree Balancing](https://www.geeksforgeeks.org/wp-content/uploads/redBlackCase3b.png)
-
-#### Right Right Case (See g, p and x)
-
-![Red Black Tree Balancing](https://www.geeksforgeeks.org/wp-content/uploads/redBlackCase3c.png)
-
-#### Right Left Case (See g, p and x)
-
-![Red Black Tree Balancing](https://www.geeksforgeeks.org/wp-content/uploads/redBlackCase3d.png)
-
 ## References
 
 - [Wikipedia](https://en.wikipedia.org/wiki/Red%E2%80%93black_tree)
