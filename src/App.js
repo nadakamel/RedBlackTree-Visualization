@@ -112,96 +112,96 @@ class App extends Component {
                             { name: nullNode, nodeSvgShape: blackColor }] }
                         currentNode = previousNode.children[1];
                     }
-                }
-                // RB-INSERT-FIXUP procedure
-                console.log('Grandparent node = '+ prePreviousNode);
-                console.log('Parent node = '+ previousNode);
-                console.log('Node = '+ currentNode.name);
-                debugger;
-                while (previousNode.nodeSvgShape == redColor) {
-                    if(previousNode.name == prePreviousNode.children[0].name) {
-                        var y = prePreviousNode.children[1];
-                        if(y.nodeSvgShape == redColor) {
-                            previousNode.nodeSvgShape = blackColor;
-                            y.nodeSvgShape = blackColor;
-                            prePreviousNode.nodeSvgShape = redColor;
-                            currentNode = prePreviousNode;
+                    // RB-INSERT-FIXUP procedure
+                    console.log('Grandparent node = '+ prePreviousNode);
+                    console.log('Parent node = '+ previousNode);
+                    console.log('Node = '+ currentNode.name);
+                    debugger;
+                    while (previousNode.nodeSvgShape == redColor) {
+                        if(previousNode.name == prePreviousNode.children[0].name) {
+                            var y = prePreviousNode.children[1];
+                            if(y.nodeSvgShape == redColor) {
+                                previousNode.nodeSvgShape = blackColor;
+                                y.nodeSvgShape = blackColor;
+                                prePreviousNode.nodeSvgShape = redColor;
+                                currentNode = prePreviousNode;
+                            }
+                            else {
+                                if(currentNode.name == previousNode.children[1].name) {
+                                    currentNode = previousNode;
+                                    debugger;
+                                    // LEFT-Rotate(T,currentNode)
+                                    var temp = currentNode.children[1];
+                                    currentNode.children[1] = temp.children[0];
+                                    if(temp.children[0].name != nullNode) {
+                                        temp = currentNode;
+                                    }
+                                    currentNode = previousNode;
+                                    if(previousNode.name == nullNode) {
+                                        tree[0] = temp;
+                                    }
+                                    else if(currentNode.name == previousNode.children[0].name) {
+                                        previousNode.children[0] = temp;
+                                    }
+                                    else {
+                                        previousNode.children[1] = temp;
+                                    }
+                                    temp.children[0] = currentNode;
+                                    previousNode = temp;
+                                    // end of LEFT-Rotate(T,currentNode)
+                                }
+                                previousNode.nodeSvgShape = blackColor;
+                                prePreviousNode.nodeSvgShape = redColor;
+                                debugger;
+                                // RIGHT-Rotate(T,prePreviousNode)
+                                
+                                // end of RIGHT-Rotate(T,prePreviousNode)
+                            }
                         }
                         else {
-                            if(currentNode.name == previousNode.children[1].name) {
-                                currentNode = previousNode;
+                            var y = prePreviousNode.children[0];
+                            if(y.nodeSvgShape == redColor) {
                                 debugger;
-                                // LEFT-Rotate(T,currentNode)
-                                var temp = currentNode.children[1];
-                                currentNode.children[1] = temp.children[0];
-                                if(temp.children[0].name != nullNode) {
-                                    temp = currentNode;
-                                }
-                                currentNode = previousNode;
-                                if(previousNode.name == nullNode) {
-                                    tree[0] = temp;
-                                }
-                                else if(currentNode.name == previousNode.children[0].name) {
-                                    previousNode.children[0] = temp;
-                                }
-                                else {
-                                    previousNode.children[1] = temp;
-                                }
-                                temp.children[0] = currentNode;
-                                previousNode = temp;
-                                // end of LEFT-Rotate(T,currentNode)
+                                previousNode.nodeSvgShape = blackColor;
+                                y.nodeSvgShape = blackColor;
+                                prePreviousNode.nodeSvgShape = redColor;
+                                currentNode = prePreviousNode;
                             }
-                            previousNode.nodeSvgShape = blackColor;
-                            prePreviousNode.nodeSvgShape = redColor;
-                            debugger;
-                            // RIGHT-Rotate(T,prePreviousNode)
-                            
-                            // end of RIGHT-Rotate(T,prePreviousNode)
-                        }
-                    }
-                    else {
-                        var y = prePreviousNode.children[0];
-                        if(y.nodeSvgShape == redColor) {
-                            debugger;
-                            previousNode.nodeSvgShape = blackColor;
-                            y.nodeSvgShape = blackColor;
-                            prePreviousNode.nodeSvgShape = redColor;
-                            currentNode = prePreviousNode;
-                        }
-                        else {
-                            if(currentNode.name == previousNode.children[0].name) {
-                                currentNode = previousNode;
+                            else {
+                                if(currentNode.name == previousNode.children[0].name) {
+                                    currentNode = previousNode;
+                                    debugger;
+                                    // RIGHT-Rotate(T,currentNode)
+                                    var temp = currentNode.children[0];
+                                    currentNode.children[0] = temp.children[1];
+                                    if(temp.children[1].name != nullNode) {
+                                        temp = currentNode;
+                                    }
+                                    currentNode = previousNode;
+                                    if(previousNode.name == nullNode) {
+                                        tree[0] = temp;
+                                    }
+                                    else if(currentNode.name == previousNode.children[1].name) {
+                                        previousNode.children[1]= temp;
+                                    }
+                                    else {
+                                        previousNode.children[0] = temp;
+                                    }
+                                    temp.children[1] = currentNode;
+                                    previousNode = temp;
+                                    // end of RIGHT-Rotate(T,currentNode)
+                                }
+                                previousNode.nodeSvgShape = blackColor;
+                                prePreviousNode.nodeSvgShape = redColor;
                                 debugger;
-                                // RIGHT-Rotate(T,currentNode)
-                                var temp = currentNode.children[0];
-                                currentNode.children[0] = temp.children[1];
-                                if(temp.children[1].name != nullNode) {
-                                    temp = currentNode;
-                                }
-                                currentNode = previousNode;
-                                if(previousNode.name == nullNode) {
-                                    tree[0] = temp;
-                                }
-                                else if(currentNode.name == previousNode.children[1].name) {
-                                    previousNode.children[1]= temp;
-                                }
-                                else {
-                                    previousNode.children[0] = temp;
-                                }
-                                temp.children[1] = currentNode;
-                                previousNode = temp;
-                                // end of RIGHT-Rotate(T,currentNode)
-                            }
-                            previousNode.nodeSvgShape = blackColor;
-                            prePreviousNode.nodeSvgShape = redColor;
-                            debugger;
-                            // LEFT-Rotate(T,prePreviousNode)
-                            
-                            // end of LEFT-Rotate(T,prePreviousNode)
+                                // LEFT-Rotate(T,prePreviousNode)
+                                
+                                // end of LEFT-Rotate(T,prePreviousNode)
+                            } // end else
                         } // end else
-                    } // end else
-                } // end while
-                tree[0].nodeSvgShape = blackColor
+                    } // end while
+                    tree[0].nodeSvgShape = blackColor
+                }
             }
             this.myTreeData = tree
             this.setState({
