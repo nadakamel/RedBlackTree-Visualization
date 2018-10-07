@@ -44,7 +44,7 @@ in `O(log n)` time.
 
 An example of a red–black tree:
 
-![red-black tree](https://ibb.co/niSBJp)
+![red-black tree](https://i.postimg.cc/9f849VPy/Insert.png)
 
 ### Properties
 
