@@ -1,5 +1,21 @@
 # Red–Black Tree Visualization
 
+## Getting Started
+
+1) Download Node.js from the below link if you don't have it on your machine.
+https://nodejs.org/en/download/
+
+2) Clone this repository to your machine using your machine's Terminal.
+`git clone https://github.com/nadakamel/RedBlackTree-Visualization.git`
+
+3) Download node_modules folder to the project using the below command line.
+`npm install`
+
+4) Run the project on Terminal using the below command line.
+`npm start`
+
+## About Red-Black Tree
+
 A **red–black tree** is a kind of self-balancing binary search 
 tree in computer science. Each node of the binary tree has 
 an extra bit, and that bit is often interpreted as the 
@@ -27,7 +43,7 @@ An example of a red–black tree:
 
 ![red-black tree](https://upload.wikimedia.org/wikipedia/commons/6/66/Red-black_tree_example.svg)
 
-## Properties
+### Properties
 
 In addition to the requirements imposed on a binary search 
 tree the following must be satisfied by a red–black tree:
