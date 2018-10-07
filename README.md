@@ -46,6 +46,9 @@ An example of a red–black tree:
 
 ![red-black tree](https://i.postimg.cc/9f849VPy/Insert.png)
 
+Search for node 11
+![red-black tree](https://i.postimg.cc/NjXbbJCy/Search.png)
+
 ### Properties
 
 In addition to the requirements imposed on a binary search 
