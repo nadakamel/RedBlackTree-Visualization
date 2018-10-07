@@ -96,6 +96,7 @@ class App extends Component {
                     }
                     else {
                         isValueFound = true;
+                        break;
                     }
                 }
                 if(isValueFound == false) {
