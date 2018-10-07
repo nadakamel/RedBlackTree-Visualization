@@ -8,10 +8,10 @@ https://nodejs.org/en/download/
 2) Clone this repository to your machine using your machine's Terminal.
 `git clone https://github.com/nadakamel/RedBlackTree-Visualization.git`
 
-3) Download node_modules folder to the project using the below command line.
+3) Download node_modules folder to the project using this command line
 `npm install`
 
-4) Run the project on Terminal using the below command line.
+4) Run the project on Terminal using this command line
 `npm start`
 
 ## About Red-Black Trees
